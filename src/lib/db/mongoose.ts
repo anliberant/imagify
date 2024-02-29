@@ -1,4 +1,4 @@
-import { Mongoose } from 'mongoose';
+import mongoose, { Mongoose } from 'mongoose';
 
 const MONGO_URL = process.env.MONGO_DB_URL;
 
@@ -15,7 +15,7 @@ if (!cached) {
   };
 }
 
-export const connectToDatabase = async (): MongooseConnection => {
+export const connectToDatabase = async () => {
   if (cached.conn) {
     return cached.conn;
   }
